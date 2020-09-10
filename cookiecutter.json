@@ -1,6 +1,6 @@
 {
   "cli_executable_name": "cl",
   "company_name" : "Teqniqly",
-  "project_description": "My CLI does interesting stuff.",
+  "cli_description": "My CLI does interesting stuff.",
   "author_email": "first.last@teqniqly.com"
 }

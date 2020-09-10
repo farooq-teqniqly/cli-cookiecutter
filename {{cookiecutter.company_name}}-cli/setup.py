@@ -15,7 +15,7 @@ setuptools.setup(
     version=1.0,
     author="{{cookiecutter.company_name}}",
     author_email="{{cookiecutter.author_email}}",
-    description="{{cookiecutter.project_description}}",
+    description="{{cookiecutter.cli_description}}",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_namespace_packages(exclude=("tests",)),

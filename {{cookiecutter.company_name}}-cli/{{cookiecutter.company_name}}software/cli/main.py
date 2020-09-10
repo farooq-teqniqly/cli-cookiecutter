@@ -9,7 +9,7 @@ from {{cookiecutter.company_name}}software.cli.core.sqllitekeyvaluestore import 
 cmd_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "commands"))
 
 
-class MarelCli(click.MultiCommand):
+class {{cookiecutter.company_name}}Cli(click.MultiCommand):
     @classmethod
     def list_commands(cls, ctx):
         rv = []
@@ -38,7 +38,7 @@ class MarelCli(click.MultiCommand):
         return ns["cli"]
 
 
-@click.group(cls=MarelCli, help="The Marel Connect CLI.")
+@click.group(cls={{cookiecutter.company_name}}Cli, help="{{cookiecutter.cli_description}}")
 @click.pass_context
 def cli(ctx: click.Context):
     store = SqlLiteKeyValueStore()

@@ -35,5 +35,17 @@ for file in source_files:
             "{{cookiecutter.company_name}}", "{{cookiecutter.company_name}}".lower()
         )
 
+        # class names in CamelCase.
+        contents = contents.replace(
+            f"class {{cookiecutter.company_name}}".lower(),
+            "class {{cookiecutter.company_name}}",
+        )
+
+        # replace description text with original in case it contained the company name
+        contents = contents.replace(
+            f"help={{cookiecutter.cli_description}}".lower(),
+            "help={{cookiecutter.cli_description}}",
+        )
+
     with open(file, "w+") as f:
         f.write(contents)
