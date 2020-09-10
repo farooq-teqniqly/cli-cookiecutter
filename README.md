@@ -90,6 +90,14 @@ own state manager. The cookiecutter provides a SQLLite based state manager in ``
 The ```auth``` command group demonstrates use of the ```SqlLiteStateService```. The user's context is saved by ```auth login```
 and removed by ```auth logout```.
 
-# Contributing
+# Adding Command Groups
 
-Contributions are welcome. Just follow the same process as you do for other repos.
+Adding command groups is easy. Just follow the convention of the ``auth`` and ``git`` groups:
+
+1. Create a package under ```commands``` with the name of the group.
+2. Create a Python file with the name of the group. This is where the commands are defined.
+
+## Command Group Discovery
+
+The reason the process is so simple is because the CLI discovers the command groups at runtime. See the ```list_commands```
+and ```get_commands``` functions is ```main.py```.
