@@ -41,6 +41,11 @@ for file in source_files:
             "class {{cookiecutter.company_name}}",
         )
 
+        contents = contents.replace(
+            f"cls={{cookiecutter.company_name}}".lower(),
+            "cls={{cookiecutter.company_name}}",
+        )
+
         # replace description text with original in case it contained the company name
         contents = contents.replace(
             f"help={{cookiecutter.cli_description}}".lower(),
