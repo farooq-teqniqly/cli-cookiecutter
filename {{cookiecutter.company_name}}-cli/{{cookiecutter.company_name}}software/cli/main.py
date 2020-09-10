@@ -4,7 +4,7 @@ import os
 
 from {{cookiecutter.company_name}}software.cli.core.contextservice import ContextService
 from {{cookiecutter.company_name}}software.cli.core.logger import CliOutput
-from {{cookiecutter.company_name}}software.cli.core.sqllitekeyvaluestore import SqlLiteKeyValueStore
+from {{cookiecutter.company_name}}software.cli.core.sqllitestateservice import SqlLiteStateService
 
 cmd_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "commands"))
 
@@ -41,7 +41,7 @@ class {{cookiecutter.company_name}}Cli(click.MultiCommand):
 @click.group(cls={{cookiecutter.company_name}}Cli, help="{{cookiecutter.cli_description}}")
 @click.pass_context
 def cli(ctx: click.Context):
-    store = SqlLiteKeyValueStore()
+    store = SqlLiteStateService()
     store.initialize()
     ctx.obj = ContextService(dict(log=CliOutput(), store=store))
 

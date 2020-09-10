@@ -2,7 +2,7 @@ import abc
 from typing import Any, Tuple
 
 
-class KeyValueStore(abc.ABC):
+class StateService(abc.ABC):
     @abc.abstractmethod
     def initialize(self):
         pass
@@ -11,17 +11,14 @@ class KeyValueStore(abc.ABC):
     def cleanup(self):
         pass
 
-    def __del__(self):
+    @abc.abstractmethod
+    def save_state(self, key: str, value: Any):
         pass
 
     @abc.abstractmethod
-    def set(self, key: str, value: Any):
+    def remove_state(self, key: str):
         pass
 
     @abc.abstractmethod
-    def remove(self, key: str):
-        pass
-
-    @abc.abstractmethod
-    def get(self, key) -> Tuple[str, dict]:
+    def load_state(self, key) -> Tuple[str, dict]:
         pass

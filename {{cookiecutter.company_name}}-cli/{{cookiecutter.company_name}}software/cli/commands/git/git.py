@@ -10,7 +10,7 @@ from {{cookiecutter.company_name}}software.cli.core.repo import Repo
 @click.option("-d", "--debug", is_flag=True, help="Turn on debug mode.")
 @click.pass_context
 def cli(ctx, home: str, debug: bool):
-    ctx.obj.add("repo", Repo(home, debug))
+    ctx.obj.save_context("repo", Repo(home, debug))
 
 
 @cli.command()
@@ -29,7 +29,7 @@ def clone(context_service: ContextService, source: str, destination: str):
 @click.pass_obj
 def commit(context_service: ContextService, message: str, author: str):
     """Commit local changes."""
-    repo: Repo = context_service.get("repo")
+    repo: Repo = context_service.get_context("repo")
     cli_output: CliOutput = context_service.get_cli_output()
 
     cli_output.info(f"File committed by '{author}'. Commit message: '{message}'")
