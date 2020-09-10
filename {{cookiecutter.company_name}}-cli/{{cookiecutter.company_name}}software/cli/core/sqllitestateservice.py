@@ -7,7 +7,7 @@ from {{cookiecutter.company_name}}software.cli.core.stateservice import StateSer
 
 class SqlLiteStateService(StateService):
     def __init__(self):
-        self.conn = sqlite3.connect("mc-cli.db")
+        self.conn = sqlite3.connect("{cookiecutter.cli_executable_name}-cli.db")
 
     def initialize(self):
         try:
@@ -32,7 +32,7 @@ class SqlLiteStateService(StateService):
         self.conn.execute("DELETE FROM STATE WHERE KEY = ?", (key,))
         self.conn.commit()
 
-    def save_state(self, key) -> Tuple[str, dict]:
+    def load_state(self, key) -> Tuple[str, dict]:
         cursor = self.conn.execute("SELECT KEY, VALUE FROM STATE WHERE KEY = ?", (key,))
         result = cursor.fetchone()
         value_json = json.loads(result[1])

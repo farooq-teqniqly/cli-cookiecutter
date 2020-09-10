@@ -22,7 +22,9 @@ The cookiecutter scaffolds a simple CLI that exhibits some of Click's interestin
 verify all tests pass:
 
 1. Switch to the folder named ```[Company Name]-cli```.
-2. Create and activate a new virtual environment.
+2. Create and activate a new virtual environment:
+   - Run ```python -m venv .```
+   - Run ```Scripts\activate.bat```
 3. Run ```pip install -r requirements.txt```.
 4. Run ```pytest``` and verify all 20 tests pass.
 
