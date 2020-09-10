@@ -12,19 +12,13 @@ paths = [
     if path.__contains__("{{cookiecutter.company_name}}")
 ]
 
-print(paths)
-
 # Folder names in lowercase.
 for path in paths:
     os.rename(path, path.lower())
 
 source_files = [
-    path
-    for path in glob.glob("./**/*.py", recursive=True)
-    if path.__contains__(".py")
+    path for path in glob.glob("./**/*.py", recursive=True) if path.__contains__(".py")
 ]
-
-print(source_files)
 
 for file in source_files:
     with open(file, "r") as f:
@@ -45,7 +39,6 @@ for file in source_files:
             f"cls={{cookiecutter.company_name}}".lower(),
             "cls={{cookiecutter.company_name}}",
         )
-
 
     with open(file, "w+") as f:
         f.write(contents)
