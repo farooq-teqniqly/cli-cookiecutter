@@ -46,11 +46,6 @@ for file in source_files:
             "cls={{cookiecutter.company_name}}",
         )
 
-        # replace description text with original in case it contained the company name
-        contents = contents.replace(
-            f"help={{cookiecutter.cli_description}}".lower(),
-            "help={{cookiecutter.cli_description}}",
-        )
 
     with open(file, "w+") as f:
         f.write(contents)

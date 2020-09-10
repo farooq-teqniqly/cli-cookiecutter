@@ -28,12 +28,13 @@ verify all tests pass:
 
 # 
 1. Run ```pip install --editable .``` This will install the CLI using ```setup.py```.
-2. Enter the name of the CLI's executable and press ENTER. You should see the following help output:
+2. Enter the name of the CLI's executable and press ENTER. The default executable name is ```cl```. Assuming you 
+selected default values for the other parameters, you should see the following help output:
 
 ```
-Usage: mc [OPTIONS] COMMAND [ARGS]...
+Usage: cl [OPTIONS] COMMAND [ARGS]...
 
-  The marel Connect CLI.
+  My CLI does interesting stuff.
 
 Options:
   --help  Show this message and exit.
@@ -41,7 +42,6 @@ Options:
 Commands:
   auth  Auth commands.
   git   Git commands.
-
 ```
 
 # Contributing
