@@ -7,7 +7,7 @@ from {{cookiecutter.company_name}}software.cli.core.stateservice import StateSer
 
 class SqlLiteStateService(StateService):
     def __init__(self):
-        self.conn = sqlite3.connect("{cookiecutter.cli_executable_name}-cli.db")
+        self.conn = sqlite3.connect("{{cookiecutter.cli_executable_name}}-cli.db")
 
     def initialize(self):
         try:
