@@ -42,7 +42,6 @@ class {{cookiecutter.company_name}}Cli(click.MultiCommand):
 @click.pass_context
 def cli(ctx: click.Context):
     store = SqlLiteStateService()
-    store.initialize()
     ctx.obj = ContextService(dict(log=CliOutput(), store=store))
 
 
