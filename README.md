@@ -11,13 +11,23 @@ Run ```pip install cookiecutter```
 # Scaffold a New CLI Project
 1. Open a command prompt and switch to the location where you want the project to reside.
 2. Create a new virtual environment. 
-2. Run ```cookiecutter https://github.com/farooq-teqniqly/cli-cookiecutter```
-3. Enter the company name. This will be used in the various folder names and in the README.
-4. Enter the CLI's description. This description will be shown in the module's README.
-5. Enter your e-mail address. This will be put in ```setup.py```.
-6. Right-click the **tests** folder and select **Run Unittests in tests**. The sole test should pass.
+3. Run ```cookiecutter https://github.com/farooq-teqniqly/cli-cookiecutter```
+4. Enter a name for the CLI's executable.
+5. Enter the company name. This will be used in the various folder names, the README, and the LICENSE files.
+6. Enter the CLI's description. This description will be shown in the README.
+7. Enter your e-mail address. This will be put in ```setup.py```.
 
-That's it, start coding your module!
+# Run the CLI Tests
+The cookiecutter scaffolds a simple CLI that exhibits some of Click's interesting features. Prior to running the CLI,
+verify all tests pass:
+
+1. Switch to the folder containing the ``requirements.txt`` file.
+2. Create and activate a new virtual environment.
+3. Run ```pip install -r requirements.txt```.
+4. Run ```pytest``` and verify all 20 tests pass.
+
+# Run the CLI
+
 
 # Contributing
 

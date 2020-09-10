@@ -10,12 +10,9 @@ os.chdir(dname)
 with open("README.md", "r") as f:
     long_description = f.read()
 
-with open("VERSION", "r") as f:
-    version = f.read()
-
 setuptools.setup(
     name="{{cookiecutter.company_name}}-CLI",
-    version=version,
+    version=1.0,
     author="{{cookiecutter.company_name}}",
     author_email="{{cookiecutter.author_email}}",
     description="{{cookiecutter.project_description}}",
