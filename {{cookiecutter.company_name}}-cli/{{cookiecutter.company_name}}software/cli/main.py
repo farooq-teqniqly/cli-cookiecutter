@@ -6,7 +6,7 @@ from {{cookiecutter.company_name}}software.cli.core.contextservice import Contex
 from {{cookiecutter.company_name}}software.cli.core.logger import CliOutput
 from {{cookiecutter.company_name}}software.cli.core.sqllitekeyvaluestore import SqlLiteKeyValueStore
 
-cmd_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "../commands"))
+cmd_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "commands"))
 
 
 class MarelCli(click.MultiCommand):
